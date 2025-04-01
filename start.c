@@ -4,6 +4,9 @@
 
 int* cards;
 
+int p1_size = 25;
+int p2_size = 25;
+
 void swap(int* a, int* b)
 {
     int temp = *a;
@@ -35,6 +38,8 @@ void play_game_until_end()
     int* p1 = malloc(sizeof(*p1)*52);
     int* p2 = malloc(sizeof(*p1)*52);
 
+    int turn = 1;
+
     int index = 0;
     
     for(int i=0; i < 52; i++)
@@ -50,9 +55,15 @@ void play_game_until_end()
         }
     }
     
+    int* deck = malloc(sizeof(*deck)*52);
+    int d_size = 0;
+    
     while(is_game_over(p1, p2) == 0)
     {
-        
+        if(turn)
+        {
+            deck[d_size] = p1[]
+        }
     }
 }
 
