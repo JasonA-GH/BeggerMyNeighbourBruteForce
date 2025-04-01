@@ -21,9 +21,39 @@ void randomize_deck()
     }
 }
 
+int is_game_over(int* p1, int* p2)
+{
+    if(p1[0] == -1 || p2[0] == -1)
+        if(p1[0] == -1)
+            return 2;
+        return 1;
+    return 0;
+}
+
 void play_game_until_end()
 {
+    int* p1 = malloc(sizeof(*p1)*52);
+    int* p2 = malloc(sizeof(*p1)*52);
+
+    int index = 0;
     
+    for(int i=0; i < 52; i++)
+    {
+        if(i <= 25)
+            p1[i] = cards[i];
+        else
+        {
+            p2[index] = cards[i];
+            index++;
+            p1[i] = -1;
+            p2[i] = -1;
+        }
+    }
+    
+    while(is_game_over(p1, p2) == 0)
+    {
+        
+    }
 }
 
 int main()
